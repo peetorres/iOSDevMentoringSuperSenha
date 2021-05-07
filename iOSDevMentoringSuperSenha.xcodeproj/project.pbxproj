@@ -23,6 +23,8 @@
 		EBA885242645FCAF0011CBA7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA885162645FCAF0011CBA7 /* MainCoordinator.swift */; };
 		EBA885252645FCAF0011CBA7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA885172645FCAF0011CBA7 /* Coordinator.swift */; };
 		EBA885262645FCAF0011CBA7 /* PasswordGeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA885192645FCAF0011CBA7 /* PasswordGeneratorViewModel.swift */; };
+		EBA88531264601EC0011CBA7 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8852F264601EC0011CBA7 /* SetupViewController.swift */; };
+		EBA88532264601EC0011CBA7 /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA88530264601EC0011CBA7 /* SetupViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		EBA885162645FCAF0011CBA7 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		EBA885172645FCAF0011CBA7 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EBA885192645FCAF0011CBA7 /* PasswordGeneratorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorViewModel.swift; sourceTree = "<group>"; };
+		EBA8852F264601EC0011CBA7 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		EBA88530264601EC0011CBA7 /* SetupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		EBA884F02645FC3B0011CBA7 /* iOSDevMentoringSuperSenha */ = {
 			isa = PBXGroup;
 			children = (
+				EBA8852E264601660011CBA7 /* SetupViewController */,
 				EBA885142645FCAF0011CBA7 /* Coordinator */,
 				EBA885092645FCAE0011CBA7 /* Helper */,
 				EBA8850D2645FCAE0011CBA7 /* Model */,
@@ -145,6 +150,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EBA8852E264601660011CBA7 /* SetupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EBA8852F264601EC0011CBA7 /* SetupViewController.swift */,
+				EBA88530264601EC0011CBA7 /* SetupViewController.xib */,
+			);
+			path = SetupViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA88532264601EC0011CBA7 /* SetupViewController.xib in Resources */,
 				EBA884FE2645FC3F0011CBA7 /* LaunchScreen.storyboard in Resources */,
 				EBA884FB2645FC3F0011CBA7 /* Assets.xcassets in Resources */,
 				EBA8851A2645FCAF0011CBA7 /* Main.storyboard in Resources */,
@@ -221,6 +236,7 @@
 				EBA885262645FCAF0011CBA7 /* PasswordGeneratorViewModel.swift in Sources */,
 				EBA8851D2645FCAF0011CBA7 /* RulesDTO.swift in Sources */,
 				EBA885222645FCAF0011CBA7 /* ShowPasswordsViewController.swift in Sources */,
+				EBA88531264601EC0011CBA7 /* SetupViewController.swift in Sources */,
 				EBA885252645FCAF0011CBA7 /* Coordinator.swift in Sources */,
 				EBA8851F2645FCAF0011CBA7 /* PasswordGenerator.swift in Sources */,
 				EBA885202645FCAF0011CBA7 /* PasswordGeneratorViewController.swift in Sources */,
