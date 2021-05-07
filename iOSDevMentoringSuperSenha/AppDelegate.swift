@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  iOSDevMentoringSuperSenha
+//  SuperSenha
 //
-//  Created by Pedro Gabriel on 07/05/21.
+//  Created by Heitor Novais | Gerencianet on 06/05/21.
 //
 
 import UIKit
