@@ -7,15 +7,15 @@
 
 import Foundation
 
-protocol PasswordGeneratorViewModelDelegate {
+protocol ShowPasswordsViewModelDelegate {
     func didGeneratedPassword()
 }
 
-class PasswordGeneratorViewModel {
+class ShowPasswordsViewModel {
     var numberPasswords: Int
     var rules: RulesModel
     var passwords = [String]()
-    var delegate: PasswordGeneratorViewModelDelegate?
+    var delegate: ShowPasswordsViewModelDelegate?
     
     init(numberPasswords: Int, rules: RulesModel) {
         self.numberPasswords = numberPasswords

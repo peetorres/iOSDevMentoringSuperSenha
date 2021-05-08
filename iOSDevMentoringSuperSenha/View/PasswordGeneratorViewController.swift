@@ -7,6 +7,10 @@
 
 import UIKit
 
+class PasswordGeneratorViewModel {
+    
+}
+
 class PasswordGeneratorViewController: UIViewController, Storyboarded {
     @IBOutlet weak var numberPasswordsTextField: UITextField!
     @IBOutlet weak var passwordLengthTextField: UITextField!
@@ -29,10 +33,6 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-    }
-    
-    func setupUI() {
         title = "Gerador de senhas"
         navigationController?.navigationBar.barTintColor = UIColor.secondarySystemBackground
     }
@@ -44,7 +44,7 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded {
                   let rules = rules else { return }
             coordinator?.showPasswords(with: numberPassword, and: rules)
         } else {
-            showSingleCustomAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
+            coordinator?.showSingleCustomAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
         }
     }
     

@@ -11,7 +11,7 @@ class ShowPasswordsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var passwordsTextView: UITextView!
     
     var coordinator: MainCoordinator?
-    var viewModel: PasswordGeneratorViewModel?
+    var viewModel: ShowPasswordsViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class ShowPasswordsViewController: UIViewController, Storyboarded {
     }
 }
 
-extension ShowPasswordsViewController: PasswordGeneratorViewModelDelegate {
+extension ShowPasswordsViewController: ShowPasswordsViewModelDelegate {
     func didGeneratedPassword() {
         showPasswords()
     }

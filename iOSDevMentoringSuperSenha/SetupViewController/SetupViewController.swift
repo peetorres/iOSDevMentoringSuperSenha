@@ -42,7 +42,7 @@ class SetupViewController: UIViewController {
         if isValidTextFields() {
 //            coordinator?.showPasswords(delegate: self)
         } else {
-            showSingleCustomAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
+//            showSingleCustomAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
         }
     }
     

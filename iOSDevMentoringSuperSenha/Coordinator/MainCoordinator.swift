@@ -23,8 +23,15 @@ class MainCoordinator: NSObject, Coordinator {
     func showPasswords(with numberPassword: Int, and rules: RulesModel) {
         let vc = ShowPasswordsViewController.instantiate()
         vc.coordinator = self
-        vc.viewModel = PasswordGeneratorViewModel(numberPasswords: numberPassword, rules: rules)
+        vc.viewModel = ShowPasswordsViewModel(numberPasswords: numberPassword, rules: rules)
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showSingleCustomAlert(title: String, message: String) {
+        let alertControler = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let dismissAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
+        alertControler.addAction(dismissAction)
+        navigationController.present(alertControler, animated: true, completion: nil)
     }
     
     func showSafetyTips() {
