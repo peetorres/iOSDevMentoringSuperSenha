@@ -46,11 +46,11 @@ class SetupViewController: UIViewController {
         }
     }
     
-    func getRules() -> (numberPasswords: Int, rules: RulesDTO)? {
+    func getRules() -> (numberPasswords: Int, rules: RulesModel)? {
         guard let numberPasswords = self.numberPassword else { return nil }
         guard let passwordLength = self.passwordLength else { return nil }
         
-        let rulesDTO = RulesDTO(passwordLength,
+        let rulesDTO = RulesModel(passwordLength,
                                 useSmallLettersSwitch.isOn,
                                 useCapitalLettersSwitch.isOn,
                                 useDigitsSwitch.isOn,

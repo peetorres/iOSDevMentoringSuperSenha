@@ -13,7 +13,6 @@
 		EBA8851A2645FCAF0011CBA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA885072645FCAE0011CBA7 /* Main.storyboard */; };
 		EBA8851B2645FCAF0011CBA7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8850A2645FCAE0011CBA7 /* Alert.swift */; };
 		EBA8851C2645FCAF0011CBA7 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8850B2645FCAE0011CBA7 /* Characters.swift */; };
-		EBA8851D2645FCAF0011CBA7 /* RulesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8850C2645FCAE0011CBA7 /* RulesDTO.swift */; };
 		EBA8851E2645FCAF0011CBA7 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8850E2645FCAE0011CBA7 /* Rules.swift */; };
 		EBA8851F2645FCAF0011CBA7 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8850F2645FCAE0011CBA7 /* PasswordGenerator.swift */; };
 		EBA885202645FCAF0011CBA7 /* PasswordGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA885112645FCAF0011CBA7 /* PasswordGeneratorViewController.swift */; };
@@ -36,7 +35,6 @@
 		EBA885082645FCAE0011CBA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBA8850A2645FCAE0011CBA7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		EBA8850B2645FCAE0011CBA7 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
-		EBA8850C2645FCAE0011CBA7 /* RulesDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesDTO.swift; sourceTree = "<group>"; };
 		EBA8850E2645FCAE0011CBA7 /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		EBA8850F2645FCAE0011CBA7 /* PasswordGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		EBA885112645FCAF0011CBA7 /* PasswordGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +80,7 @@
 			children = (
 				EBA8852E264601660011CBA7 /* SetupViewController */,
 				EBA885142645FCAF0011CBA7 /* Coordinator */,
-				EBA885092645FCAE0011CBA7 /* Helper */,
+				EBA885092645FCAE0011CBA7 /* Helpers */,
 				EBA8850D2645FCAE0011CBA7 /* Model */,
 				EBA885062645FCAE0011CBA7 /* Storyboard */,
 				EBA885102645FCAE0011CBA7 /* View */,
@@ -103,14 +101,13 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		EBA885092645FCAE0011CBA7 /* Helper */ = {
+		EBA885092645FCAE0011CBA7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				EBA8850A2645FCAE0011CBA7 /* Alert.swift */,
 				EBA8850B2645FCAE0011CBA7 /* Characters.swift */,
-				EBA8850C2645FCAE0011CBA7 /* RulesDTO.swift */,
 			);
-			path = Helper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		EBA8850D2645FCAE0011CBA7 /* Model */ = {
@@ -234,7 +231,6 @@
 				EBA884F22645FC3B0011CBA7 /* AppDelegate.swift in Sources */,
 				EBA8851B2645FCAF0011CBA7 /* Alert.swift in Sources */,
 				EBA885262645FCAF0011CBA7 /* PasswordGeneratorViewModel.swift in Sources */,
-				EBA8851D2645FCAF0011CBA7 /* RulesDTO.swift in Sources */,
 				EBA885222645FCAF0011CBA7 /* ShowPasswordsViewController.swift in Sources */,
 				EBA88531264601EC0011CBA7 /* SetupViewController.swift in Sources */,
 				EBA885252645FCAF0011CBA7 /* Coordinator.swift in Sources */,

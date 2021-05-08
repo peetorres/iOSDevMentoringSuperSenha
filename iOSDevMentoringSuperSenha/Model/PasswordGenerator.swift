@@ -8,7 +8,7 @@
 import Foundation
 
 class PasswordGenerator {
-    static func generate(rules: Rules) -> String? {
+    static func generate(rules: RulesModel) -> String? {
         if !isValid(rules) {
             return nil
         }
@@ -24,7 +24,7 @@ class PasswordGenerator {
         return String(password.shuffled())
     }
     
-    private static func isValid(_ rules: Rules) -> Bool {
+    private static func isValid(_ rules: RulesModel) -> Bool {
         return ((rules.passwordLength > 0) &&
                 (rules.useSmallLetters ||
                  rules.useCapitalLetters ||
@@ -32,7 +32,7 @@ class PasswordGenerator {
                  rules.useSpecialCharacters))
     }
     
-    private static func getUniverse(by rules: Rules) -> String {
+    private static func getUniverse(by rules: RulesModel) -> String {
         var universe = String()        
         if rules.useSmallLetters {
             let smallLetters = Characters.getSmallLetters()
@@ -53,7 +53,7 @@ class PasswordGenerator {
         return universe
     }
     
-    private static func getRandomMandarotyCharacters(by rules: Rules) -> String {
+    private static func getRandomMandarotyCharacters(by rules: RulesModel) -> String {
         var characters = String()
         if rules.useSmallLetters {
             let smallLetters = Characters.getSmallLetters()

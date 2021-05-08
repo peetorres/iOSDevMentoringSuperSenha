@@ -8,8 +8,8 @@
 import Foundation
 
 class PasswordGeneratorViewModel {
-    func generatePassword(dto: RulesDTO) -> String? {
-        let rules = Rules(dto.passwordLength, dto.useSmallLetters, dto.useCapitalLetters, dto.useDigits, dto.useSpecialCharacters)
+    func generatePassword(dto: RulesModel) -> String? {
+        let rules = RulesModel(dto.passwordLength, dto.useSmallLetters, dto.useCapitalLetters, dto.useDigits, dto.useSpecialCharacters)
         return PasswordGenerator.generate(rules: rules)
     }
 }

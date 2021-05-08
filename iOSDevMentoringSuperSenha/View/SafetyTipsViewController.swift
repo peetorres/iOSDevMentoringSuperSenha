@@ -8,9 +8,14 @@
 import UIKit
 
 class SafetyTipsViewController: UIViewController, Storyboarded {
-    var coordinator: MainCoordinator?
+//    var coordinator: MainCoordinator?
     
     @IBAction func close(_ sender: UIButton) {
-        coordinator?.dismissModal(animated: true, completion: nil)
+        dismiss(animated: true)
+//        coordinator?.dismissModal(animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }

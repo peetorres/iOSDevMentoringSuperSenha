@@ -7,10 +7,6 @@
 
 import UIKit
 
-//protocol RulesDelegate: AnyObject {
-//    func getRules() -> (numberPasswords: Int, rules: RulesDTO)?
-//}
-
 class PasswordGeneratorViewController: UIViewController, Storyboarded {
     @IBOutlet weak var numberPasswordsTextField: UITextField!
     @IBOutlet weak var passwordLengthTextField: UITextField!
@@ -44,6 +40,7 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded {
     }
     
     func setupUI() {
+        title = "Gerador de senhas"
         navigationController?.navigationBar.barTintColor = UIColor.secondarySystemBackground
     }
     
@@ -58,11 +55,15 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded {
         }
     }
     
-    func getRules() -> (numberPasswords: Int, rules: RulesDTO)? {
+    func getRules() -> (numberPasswords: Int, rules: RulesModel)? {
         guard let numberPasswords = self.numberPassword else { return nil }
         guard let passwordLength = self.passwordLength else { return nil }
         
-        let rulesDTO = RulesDTO(passwordLength, useSmallLettersSwitch.isOn, useCapitalLettersSwitch.isOn, useDigitsSwitch.isOn, useSpecialCharactersSwitch.isOn)
+        let rulesDTO = RulesModel(passwordLength,
+                                  useSmallLettersSwitch.isOn,
+                                  useCapitalLettersSwitch.isOn,
+                                  useDigitsSwitch.isOn,
+                                  useSpecialCharactersSwitch.isOn)
         
         return (numberPasswords, rulesDTO)
     }
