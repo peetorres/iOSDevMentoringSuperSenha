@@ -22,16 +22,13 @@ class MainCoordinator: NSObject, Coordinator {
     
     func showPasswords(with numberPassword: Int, and rules: RulesModel) {
         let vc = ShowPasswordsViewController.instantiate()
-        vc.numberPasswords = numberPassword
-        vc.rules = rules
         vc.coordinator = self
-        vc.passwordGeneratorViewModel = PasswordGeneratorViewModel()
+        vc.viewModel = PasswordGeneratorViewModel(numberPasswords: numberPassword, rules: rules)
         navigationController.pushViewController(vc, animated: true)
     }
     
     func showSafetyTips() {
         let vc = SafetyTipsViewController.instantiate()
-//        vc.coordinator = self
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .coverVertical
         navigationController.present(vc, animated: true, completion: nil)

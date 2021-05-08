@@ -11,15 +11,13 @@ class ShowPasswordsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var passwordsTextView: UITextView!
     
     var coordinator: MainCoordinator?
-    var passwordGeneratorViewModel: PasswordGeneratorViewModel?
-    var numberPasswords: Int?
-    var passwordLength: Int?
-    var rules: RulesModel?
+    var viewModel: PasswordGeneratorViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        generatePassword()
+        viewModel?.generatePasswords()
+        showPasswords()
     }
     
     func setupNavigationBar() {
@@ -29,26 +27,16 @@ class ShowPasswordsViewController: UIViewController, Storyboarded {
     }
 
     @IBAction func generatePasswordAgainTapped(_ sender: UIButton) {
-        generatePassword()
+        viewModel?.generatePasswords()
+        showPasswords()
     }
     
     @IBAction func showSafetyTips(_ sender: UIButton) {
         coordinator?.showSafetyTips()
     }
     
-    func generatePassword() {
-        guard let numberPasswords = numberPasswords,
-              let rules = rules else { return }
-        var passwords = [String]()
-        while passwords.count < numberPasswords {
-            if let password = passwordGeneratorViewModel?.generatePassword(dto: rules){
-                passwords.append(password)
-            }
-        }
-        showPasswords(passwords)
-    }
-    
-    func showPasswords(_ passwords: [String]) {
+    func showPasswords() {
+        guard let passwords = viewModel?.passwords else { return }
         passwordsTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
         passwordsTextView.text = ""
         for password in passwords {
