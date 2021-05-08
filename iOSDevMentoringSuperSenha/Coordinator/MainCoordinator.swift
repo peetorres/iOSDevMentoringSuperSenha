@@ -15,7 +15,8 @@ class MainCoordinator: NSObject, Coordinator {
     }
     
     func start() {
-        let vc = PasswordGeneratorViewController.instantiate()
+//        let vc = PasswordGeneratorViewController.instantiate()
+        let vc = SetupViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

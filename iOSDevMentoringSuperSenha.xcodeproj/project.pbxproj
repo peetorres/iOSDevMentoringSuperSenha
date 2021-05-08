@@ -23,6 +23,8 @@
 		EBA885262645FCAF0011CBA7 /* ShowPasswordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA885192645FCAF0011CBA7 /* ShowPasswordsViewModel.swift */; };
 		EBA88531264601EC0011CBA7 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8852F264601EC0011CBA7 /* SetupViewController.swift */; };
 		EBA88532264601EC0011CBA7 /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA88530264601EC0011CBA7 /* SetupViewController.xib */; };
+		EBF23D9A2647467900A8CE98 /* PasswordGeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF23D992647467900A8CE98 /* PasswordGeneratorViewModel.swift */; };
+		EBF23DA3264748ED00A8CE98 /* SetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF23DA2264748ED00A8CE98 /* SetupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		EBA885192645FCAF0011CBA7 /* ShowPasswordsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPasswordsViewModel.swift; sourceTree = "<group>"; };
 		EBA8852F264601EC0011CBA7 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		EBA88530264601EC0011CBA7 /* SetupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupViewController.xib; sourceTree = "<group>"; };
+		EBF23D992647467900A8CE98 /* PasswordGeneratorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorViewModel.swift; sourceTree = "<group>"; };
+		EBF23DA2264748ED00A8CE98 /* SetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +80,11 @@
 		EBA884F02645FC3B0011CBA7 /* iOSDevMentoringSuperSenha */ = {
 			isa = PBXGroup;
 			children = (
-				EBA8852E264601660011CBA7 /* SetupViewController */,
 				EBA885142645FCAF0011CBA7 /* Coordinator */,
 				EBA885092645FCAE0011CBA7 /* Helpers */,
-				EBA8850D2645FCAE0011CBA7 /* Model */,
+				EBA8850D2645FCAE0011CBA7 /* Models */,
 				EBA885062645FCAE0011CBA7 /* Storyboard */,
-				EBA885102645FCAE0011CBA7 /* View */,
-				EBA885182645FCAF0011CBA7 /* ViewModel */,
+				EBA885102645FCAE0011CBA7 /* Scenes */,
 				EBA884F12645FC3B0011CBA7 /* AppDelegate.swift */,
 				EBA884FA2645FC3F0011CBA7 /* Assets.xcassets */,
 				EBA884FC2645FC3F0011CBA7 /* LaunchScreen.storyboard */,
@@ -107,23 +109,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		EBA8850D2645FCAE0011CBA7 /* Model */ = {
+		EBA8850D2645FCAE0011CBA7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				EBA8850E2645FCAE0011CBA7 /* Rules.swift */,
 				EBA8850F2645FCAE0011CBA7 /* PasswordGenerator.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		EBA885102645FCAE0011CBA7 /* View */ = {
+		EBA885102645FCAE0011CBA7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				EBA885112645FCAF0011CBA7 /* PasswordGeneratorViewController.swift */,
-				EBA885132645FCAF0011CBA7 /* ShowPasswordsViewController.swift */,
-				EBA885122645FCAF0011CBA7 /* SafetyTipsViewController.swift */,
+				EBA8852E264601660011CBA7 /* Setup */,
+				EBF23D9D264746A200A8CE98 /* PasswordGenerator */,
+				EBF23D9E264746AC00A8CE98 /* ShowPasswords */,
+				EBF23DA0264747B700A8CE98 /* SafetyTips */,
 			);
-			path = View;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		EBA885142645FCAF0011CBA7 /* Coordinator */ = {
@@ -136,21 +139,40 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		EBA885182645FCAF0011CBA7 /* ViewModel */ = {
+		EBA8852E264601660011CBA7 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
-				EBA885192645FCAF0011CBA7 /* ShowPasswordsViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		EBA8852E264601660011CBA7 /* SetupViewController */ = {
-			isa = PBXGroup;
-			children = (
+				EBF23DA2264748ED00A8CE98 /* SetupViewModel.swift */,
 				EBA8852F264601EC0011CBA7 /* SetupViewController.swift */,
 				EBA88530264601EC0011CBA7 /* SetupViewController.xib */,
 			);
-			path = SetupViewController;
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		EBF23D9D264746A200A8CE98 /* PasswordGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				EBA885112645FCAF0011CBA7 /* PasswordGeneratorViewController.swift */,
+				EBF23D992647467900A8CE98 /* PasswordGeneratorViewModel.swift */,
+			);
+			path = PasswordGenerator;
+			sourceTree = "<group>";
+		};
+		EBF23D9E264746AC00A8CE98 /* ShowPasswords */ = {
+			isa = PBXGroup;
+			children = (
+				EBA885132645FCAF0011CBA7 /* ShowPasswordsViewController.swift */,
+				EBA885192645FCAF0011CBA7 /* ShowPasswordsViewModel.swift */,
+			);
+			path = ShowPasswords;
+			sourceTree = "<group>";
+		};
+		EBF23DA0264747B700A8CE98 /* SafetyTips */ = {
+			isa = PBXGroup;
+			children = (
+				EBA885122645FCAF0011CBA7 /* SafetyTipsViewController.swift */,
+			);
+			path = SafetyTips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,11 +250,13 @@
 				EBA884F22645FC3B0011CBA7 /* AppDelegate.swift in Sources */,
 				EBA885262645FCAF0011CBA7 /* ShowPasswordsViewModel.swift in Sources */,
 				EBA885222645FCAF0011CBA7 /* ShowPasswordsViewController.swift in Sources */,
+				EBF23DA3264748ED00A8CE98 /* SetupViewModel.swift in Sources */,
 				EBA88531264601EC0011CBA7 /* SetupViewController.swift in Sources */,
 				EBA885252645FCAF0011CBA7 /* Coordinator.swift in Sources */,
 				EBA8851F2645FCAF0011CBA7 /* PasswordGenerator.swift in Sources */,
 				EBA885202645FCAF0011CBA7 /* PasswordGeneratorViewController.swift in Sources */,
 				EBA8851E2645FCAF0011CBA7 /* Rules.swift in Sources */,
+				EBF23D9A2647467900A8CE98 /* PasswordGeneratorViewModel.swift in Sources */,
 				EBA885242645FCAF0011CBA7 /* MainCoordinator.swift in Sources */,
 				EBA8851C2645FCAF0011CBA7 /* Characters.swift in Sources */,
 				EBA885232645FCAF0011CBA7 /* Storyboarded.swift in Sources */,
