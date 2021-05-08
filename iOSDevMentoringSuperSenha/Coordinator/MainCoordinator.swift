@@ -20,8 +20,10 @@ class MainCoordinator: NSObject, Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showPasswords() {
+    func showPasswords(with numberPassword: Int, and rules: RulesModel) {
         let vc = ShowPasswordsViewController.instantiate()
+        vc.numberPasswords = numberPassword
+        vc.rules = rules
         vc.coordinator = self
         vc.passwordGeneratorViewModel = PasswordGeneratorViewModel()
         navigationController.pushViewController(vc, animated: true)

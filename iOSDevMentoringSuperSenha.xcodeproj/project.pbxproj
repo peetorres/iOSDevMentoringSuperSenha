@@ -123,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				EBA885112645FCAF0011CBA7 /* PasswordGeneratorViewController.swift */,
-				EBA885122645FCAF0011CBA7 /* SafetyTipsViewController.swift */,
 				EBA885132645FCAF0011CBA7 /* ShowPasswordsViewController.swift */,
+				EBA885122645FCAF0011CBA7 /* SafetyTipsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

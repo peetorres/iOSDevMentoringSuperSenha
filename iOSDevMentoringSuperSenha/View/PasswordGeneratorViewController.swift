@@ -16,8 +16,6 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded {
     @IBOutlet weak var useSpecialCharactersSwitch: UISwitch!
     
     var coordinator: MainCoordinator?
-    var setupNavBar: (() -> Void)?
-//    var alert = Alert()
     
     var numberPassword: Int? {
         guard let numberPasswords = numberPasswordsTextField.text else { return nil }
@@ -27,15 +25,10 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded {
         guard let passwordLength = passwordLengthTextField.text else { return nil }
         return Int(passwordLength)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        setupNavBar?()
-//    }
+    var rules: RulesModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        alert.delegate = self
         setupUI()
     }
     
@@ -45,37 +38,28 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func generatePasswordTapped(_ sender: UIButton) {
-//        if textFieldsAreValid() {
+        getRules()
         if isValidTextFields() {
-//            coordinator?.showPasswords(delegate: self)
-            coordinator?.showPasswords()
+            guard let numberPassword = numberPassword,
+                  let rules = rules else { return }
+            coordinator?.showPasswords(with: numberPassword, and: rules)
         } else {
             showSingleCustomAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
-//            alert.showAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
         }
     }
     
-    func getRules() -> (numberPasswords: Int, rules: RulesModel)? {
-        guard let numberPasswords = self.numberPassword else { return nil }
-        guard let passwordLength = self.passwordLength else { return nil }
+    func getRules() {
+//        guard let numberPasswords = self.numberPassword else { return }
+        guard let passwordLength = self.passwordLength else { return }
         
-        let rulesDTO = RulesModel(passwordLength,
-                                  useSmallLettersSwitch.isOn,
-                                  useCapitalLettersSwitch.isOn,
-                                  useDigitsSwitch.isOn,
-                                  useSpecialCharactersSwitch.isOn)
+        rules = RulesModel(passwordLength,
+                           useSmallLettersSwitch.isOn,
+                           useCapitalLettersSwitch.isOn,
+                           useDigitsSwitch.isOn,
+                           useSpecialCharactersSwitch.isOn)
         
-        return (numberPasswords, rulesDTO)
+//        return (numberPasswords, rules)
     }
-    
-//    func textFieldsAreValid() -> Bool
-//    {
-//        guard let numberPasswords = numberPasswordsTextField.text else { return false }
-//        guard let passwordLength = passwordLengthTextField.text else { return false }
-//        guard let _ = Int(numberPasswords) else { return false }
-//        guard let _ = Int(passwordLength) else { return false }
-//        return true
-//    }
     
     func isValidTextFields() -> Bool {
         return numberPassword != nil && passwordLength != nil

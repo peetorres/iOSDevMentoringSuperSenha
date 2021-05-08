@@ -8,11 +8,8 @@
 import UIKit
 
 class SafetyTipsViewController: UIViewController, Storyboarded {
-//    var coordinator: MainCoordinator?
-    
     @IBAction func close(_ sender: UIButton) {
         dismiss(animated: true)
-//        coordinator?.dismissModal(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
