@@ -133,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				EBA885152645FCAF0011CBA7 /* Storyboarded.swift */,
-				EBA885162645FCAF0011CBA7 /* MainCoordinator.swift */,
 				EBA885172645FCAF0011CBA7 /* Coordinator.swift */,
+				EBA885162645FCAF0011CBA7 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";

@@ -49,16 +49,12 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded {
     }
     
     func getRules() {
-//        guard let numberPasswords = self.numberPassword else { return }
         guard let passwordLength = self.passwordLength else { return }
-        
         rules = RulesModel(passwordLength,
                            useSmallLettersSwitch.isOn,
                            useCapitalLettersSwitch.isOn,
                            useDigitsSwitch.isOn,
                            useSpecialCharactersSwitch.isOn)
-        
-//        return (numberPasswords, rules)
     }
     
     func isValidTextFields() -> Bool {
