@@ -16,8 +16,8 @@ class ShowPasswordsViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        viewModel?.delegate = self
         viewModel?.generatePasswords()
-        showPasswords()
     }
     
     func setupNavigationBar() {
@@ -28,7 +28,6 @@ class ShowPasswordsViewController: UIViewController, Storyboarded {
 
     @IBAction func generatePasswordAgainTapped(_ sender: UIButton) {
         viewModel?.generatePasswords()
-        showPasswords()
     }
     
     @IBAction func showSafetyTips(_ sender: UIButton) {
@@ -45,3 +44,8 @@ class ShowPasswordsViewController: UIViewController, Storyboarded {
     }
 }
 
+extension ShowPasswordsViewController: PasswordGeneratorViewModelDelegate {
+    func didGeneratedPassword() {
+        showPasswords()
+    }
+}

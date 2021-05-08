@@ -7,10 +7,15 @@
 
 import Foundation
 
+protocol PasswordGeneratorViewModelDelegate {
+    func didGeneratedPassword()
+}
+
 class PasswordGeneratorViewModel {
     var numberPasswords: Int
     var rules: RulesModel
     var passwords = [String]()
+    var delegate: PasswordGeneratorViewModelDelegate?
     
     init(numberPasswords: Int, rules: RulesModel) {
         self.numberPasswords = numberPasswords
@@ -33,5 +38,6 @@ class PasswordGeneratorViewModel {
                 passwords.append(password)
             }
         }
+        delegate?.didGeneratedPassword()
     }
 }
