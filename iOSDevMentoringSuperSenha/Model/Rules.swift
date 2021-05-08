@@ -7,14 +7,18 @@
 
 import Foundation
 
-struct Rules {
+struct RulesModel {
     let passwordLength: Int
     let useDigits: Bool
     let useSmallLetters: Bool
     let useCapitalLetters: Bool
     let useSpecialCharacters: Bool
     
-    init(_ passwordLength: Int, _ useSmallLetters: Bool, _ useCapitalLetters: Bool, _ useDigitis: Bool, _ useSpecialCharacters: Bool) {
+    init(_ passwordLength: Int,
+         _ useSmallLetters: Bool,
+         _ useCapitalLetters: Bool,
+         _ useDigitis: Bool,
+         _ useSpecialCharacters: Bool) {
         self.passwordLength = passwordLength
         self.useSmallLetters = useSmallLetters
         self.useCapitalLetters = useCapitalLetters        

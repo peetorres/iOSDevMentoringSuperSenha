@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol RulesDelegate: AnyObject {
-    func getRules() -> (numberPasswords: Int, rules: RulesDTO)?
-}
+//protocol RulesDelegate: AnyObject {
+//    func getRules() -> (numberPasswords: Int, rules: RulesDTO)?
+//}
 
-class PasswordGeneratorViewController: UIViewController, Storyboarded, RulesDelegate {
+class PasswordGeneratorViewController: UIViewController, Storyboarded {
     @IBOutlet weak var numberPasswordsTextField: UITextField!
     @IBOutlet weak var passwordLengthTextField: UITextField!
     @IBOutlet weak var useSmallLettersSwitch: UISwitch!
@@ -21,7 +21,7 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded, RulesDele
     
     var coordinator: MainCoordinator?
     var setupNavBar: (() -> Void)?
-    var alert = Alert()
+//    var alert = Alert()
     
     var numberPassword: Int? {
         guard let numberPasswords = numberPasswordsTextField.text else { return nil }
@@ -32,21 +32,29 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded, RulesDele
         return Int(passwordLength)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupNavBar?()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        setupNavBar?()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        alert.delegate = self
+//        alert.delegate = self
+        setupUI()
+    }
+    
+    func setupUI() {
+        navigationController?.navigationBar.barTintColor = UIColor.secondarySystemBackground
     }
     
     @IBAction func generatePasswordTapped(_ sender: UIButton) {
-        if textFieldsAreValid() {
-            coordinator?.showPasswords(delegate: self)
+//        if textFieldsAreValid() {
+        if isValidTextFields() {
+//            coordinator?.showPasswords(delegate: self)
+            coordinator?.showPasswords()
         } else {
-            alert.showAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
+            showSingleCustomAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
+//            alert.showAlert(title: "Campo inválido", message: "Preencha os campos corretamente")
         }
     }
     
@@ -59,12 +67,16 @@ class PasswordGeneratorViewController: UIViewController, Storyboarded, RulesDele
         return (numberPasswords, rulesDTO)
     }
     
-    func textFieldsAreValid() -> Bool
-    {
-        guard let numberPasswords = numberPasswordsTextField.text else { return false }
-        guard let passwordLength = passwordLengthTextField.text else { return false }
-        guard let _ = Int(numberPasswords) else { return false }
-        guard let _ = Int(passwordLength) else { return false }
-        return true
+//    func textFieldsAreValid() -> Bool
+//    {
+//        guard let numberPasswords = numberPasswordsTextField.text else { return false }
+//        guard let passwordLength = passwordLengthTextField.text else { return false }
+//        guard let _ = Int(numberPasswords) else { return false }
+//        guard let _ = Int(passwordLength) else { return false }
+//        return true
+//    }
+    
+    func isValidTextFields() -> Bool {
+        return numberPassword != nil && passwordLength != nil
     }
 }

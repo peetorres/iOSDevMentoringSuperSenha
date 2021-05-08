@@ -10,6 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetupViewController" customModule="iOSDevMentoringSuperSenha" customModuleProvider="target">
             <connections>
+                <outlet property="numberPasswordsTextField" destination="abP-O7-UzC" id="ZzE-Zd-2fv"/>
+                <outlet property="passwordLengthTextField" destination="pOi-jD-4iZ" id="Q4c-GD-XfC"/>
+                <outlet property="useCapitalLettersSwitch" destination="E4m-EE-3qQ" id="dQm-wq-3LQ"/>
+                <outlet property="useDigitsSwitch" destination="tJn-dF-mp0" id="dF7-I6-536"/>
+                <outlet property="useSmallLettersSwitch" destination="dqV-aG-rMk" id="YFh-ca-bmx"/>
+                <outlet property="useSpecialCharactersSwitch" destination="EdR-fh-Pes" id="NTc-Ll-xA1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

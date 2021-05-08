@@ -7,17 +7,11 @@
 
 import UIKit
 
-protocol AlertDelegate {
-    func showAlert(title: String, message: String)
-}
-
-class Alert: AlertDelegate {
-    unowned var delegate: UIViewController?
-    
-    func showAlert(title: String, message: String) {
+extension UIViewController {
+    func showSingleCustomAlert(title: String, message: String) {
         let alertControler = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let dismissAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
         alertControler.addAction(dismissAction)
-        delegate?.present(alertControler, animated: true, completion: nil)
+        present(alertControler, animated: true, completion: nil)
     }
 }
